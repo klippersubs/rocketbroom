@@ -240,7 +240,7 @@ module.exports = {
         'fp/no-mutating-methods': ERROR,
         'fp/no-throw': ERROR,
 
-        'security/detect-unsafe-regex': ERROR, // TODO: Write plugin for detecting unsafe xre regexes.
+        'security/detect-unsafe-regex': ERROR, // TODO: Write plugin for detecting unsafe xre regexps.
         'security/detect-buffer-noassert': ERROR,
         'security/detect-child-process': ERROR,
         'security/detect-no-csrf-before-method-override': ERROR, // TODO: Anything like this for Koa2?
@@ -254,7 +254,7 @@ module.exports = {
         'eslint-comments/no-unused-disable': ERROR,
         'eslint-comments/no-unused-enable': ERROR,
 
-        // 'optimize-regex/optimize-regex': ERROR, // TODO: Write plugin for optimizing xre regexes.
+        // 'optimize-regex/optimize-regex': ERROR, // TODO: Write plugin for optimizing xre regexps.
 
         'promise/no-nesting': ERROR,
         'promise/no-promise-in-callback': ERROR,
@@ -310,6 +310,6 @@ module.exports = {
             },
         },
         'import/extensions': ['.js', '.jsx', '.json'],
-        'import/core-modules': ['version', 'const', 'types', 'components', 'containers', 'api'],
+        'import/core-modules': ['api', 'components', 'const', 'containers', 'types', 'version'],
     },
 };

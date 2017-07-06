@@ -53,10 +53,10 @@ html(lang= 'en', manifest= htmlWebpackPlugin.files.manifest ? htmlWebpackPlugin.
                 | See #[a(href='http://outdatedbrowser.com/') outdatedbrowser.com] for options.
 
         if htmlWebpackPlugin.options.appMountId
-            div(id= htmlWebpackPlugin.options.appMountId, class= 'mount_id_' + htmlWebpackPlugin.options.appMountId)
+            div(id= htmlWebpackPlugin.options.appMountId, class= 'root_id_' + htmlWebpackPlugin.options.appMountId)
 
         each index in htmlWebpackPlugin.options.appMountIds
-            div(id= htmlWebpackPlugin.options.appMountIds[index], class= 'mount_id_' + htmlWebpackPlugin.options.appMountIds[index])
+            div(id= htmlWebpackPlugin.options.appMountIds[index], class= 'root_id_' + htmlWebpackPlugin.options.appMountIds[index])
 
         if htmlWebpackPlugin.options.version
             script(type= 'text/javascript', src= join(htmlWebpackPlugin.files.publicPath, htmlWebpackPlugin.options.version))

@@ -1657,6 +1657,12 @@ commander@^2.8.1, commander@^2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
+common-shake@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/common-shake/-/common-shake-1.5.0.tgz#98b1ad1453024e12f57ed250bf0036eb30f68795"
+  dependencies:
+    escope "^3.6.0"
+
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
@@ -5899,6 +5905,15 @@ webpack-bundle-analyzer@^2.8.2:
     mkdirp "^0.5.1"
     opener "^1.4.3"
     ws "^2.3.1"
+
+webpack-common-shake@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/webpack-common-shake/-/webpack-common-shake-1.2.2.tgz#b6f6f43278cd63af894fb0584bc76bd93dd3650e"
+  dependencies:
+    acorn "^5.0.3"
+    common-shake "^1.5.0"
+    webpack "^3.0.0"
+    webpack-sources "^1.0.1"
 
 webpack-dev-middleware@^1.10.2:
   version "1.11.0"

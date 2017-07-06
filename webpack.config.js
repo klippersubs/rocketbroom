@@ -109,11 +109,11 @@ const resolve = {
     extensions: ['.jsx', '.js', '.json'],
     alias: {
         '~': join(process.cwd(), 'src'),
-        types: join(process.cwd(), 'src', 'types'),
-        const: join(process.cwd(), 'src', 'const'),
-        components: join(process.cwd(), 'src', 'components'),
-        containers: join(process.cwd(), 'src', 'containers'),
         api: join(process.cwd(), 'src', 'api'),
+        components: join(process.cwd(), 'src', 'components'),
+        const: join(process.cwd(), 'src', 'const'),
+        containers: join(process.cwd(), 'src', 'containers'),
+        types: join(process.cwd(), 'src', 'types'),
     },
     mainFields: ['module', 'jsnext:main', 'browser', 'main'],
 };

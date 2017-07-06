@@ -12,8 +12,8 @@
 
 [options]
 module.name_mapper='^~/\(.*\)$'          -> '<PROJECT_ROOT>/src/\1'
-module.name_mapper='^types/\(.*\)$'      -> '<PROJECT_ROOT>/src/types/\1'
-module.name_mapper='^components/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
-module.name_mapper='^containers/\(.*\)$  -> '<PROJECT_ROOT>/src/contsiners/\1'
-module.name_mapper='^const/\(.*\)$'      -> '<PROJECT_ROOT>/src/const/\1'
 module.name_mapper='^api/\(.*\)$'        -> '<PROJECT_ROOT>/src/api/\1'
+module.name_mapper='^components/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^const/\(.*\)$'      -> '<PROJECT_ROOT>/src/const/\1'
+module.name_mapper='^containers/\(.*\)$  -> '<PROJECT_ROOT>/src/contsiners/\1'
+module.name_mapper='^types/\(.*\)$'      -> '<PROJECT_ROOT>/src/types/\1'
