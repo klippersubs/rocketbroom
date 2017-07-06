@@ -1,0 +1,19 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/styled-components/.*
+<PROJECT_ROOT>/node_modules/stylelint/.*
+<PROJECT_ROOT>/node_modules/relay-compiler/.*
+<PROJECT_ROOT>/node_modules/babel-plugin-relay/.*
+<PROJECT_ROOT>/node_modules/babel-plugin-flow-runtime/.*
+<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/temp/.*
+<PROJECT_ROOT>/var/.*
+<PROJECT_ROOT>/coverage/.*
+<PROJECT_ROOT>/cache/.*
+
+[options]
+module.name_mapper='^~/\(.*\)$'          -> '<PROJECT_ROOT>/src/\1'
+module.name_mapper='^types/\(.*\)$'      -> '<PROJECT_ROOT>/src/types/\1'
+module.name_mapper='^components/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^containers/\(.*\)$  -> '<PROJECT_ROOT>/src/contsiners/\1'
+module.name_mapper='^const/\(.*\)$'      -> '<PROJECT_ROOT>/src/const/\1'
+module.name_mapper='^api/\(.*\)$'        -> '<PROJECT_ROOT>/src/api/\1'

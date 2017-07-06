@@ -1,0 +1,5 @@
+[production]
+last 2 versions
+
+[development]
+chrome >= 59

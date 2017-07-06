@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Runs linter
+
+eslint --fix "." "./src/**/*.{js,jsx}"

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Adds NodeJS- and project-related paths to the PATH.
+
+# TODO: Configure NODE_PATH
+
+export PATH="${PWD}/bin:${PWD}/node_modules/.bin:${PATH}"

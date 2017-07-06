@@ -1,0 +1,17 @@
+# IDE-related stuff
+
+.idea/
+
+*.iml
+
+# NodeJS-related stuff
+
+node_modules/
+
+# Project-related stuff
+
+build/
+temp/
+var/
+coverage/
+cache/

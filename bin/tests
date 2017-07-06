@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Runs tests
+
+export NODE_ENV='production'
+
+lint && jest --coverage

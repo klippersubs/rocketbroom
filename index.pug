@@ -1,0 +1,92 @@
+- function normalize (arr) { return Array.isArray(arr) ? arr : []; }
+- htmlWebpackPlugin.options.appMountIds = normalize(htmlWebpackPlugin.options.appMountIds);
+- htmlWebpackPlugin.options.links       = normalize(htmlWebpackPlugin.options.links);
+- htmlWebpackPlugin.options.meta        = normalize(htmlWebpackPlugin.options.meta);
+- scripts                               = normalize(htmlWebpackPlugin.options.scripts);
+
+- const join = require('path').join;
+
+//- const util = require('util');
+//- util.inspect.defaultOptions.depth = 7
+//- console.log(htmlWebpackPlugin);
+
+doctype html
+
+html(lang= 'en', manifest= htmlWebpackPlugin.files.manifest ? htmlWebpackPlugin.files.manifest : undefined)
+    head
+        meta(charset= 'utf-8')/
+        meta(http-equiv= 'x-ua-compatible', content= 'ie=edge')/
+
+        if htmlWebpackPlugin.options.baseHref
+            base(href= htmlWebpackPlugin.options.baseHref)
+
+        each item in htmlWebpackPlugin.options.meta
+            meta&attributes(item)/
+
+        title= htmlWebpackPlugin.options.title || 'Webpack App'
+
+        if htmlWebpackPlugin.files.favicon
+            //- TODO: Replace this shit with something that works in all cases.
+            link(rel='shortcut icon', href= join(htmlWebpackPlugin.files.publicPath, htmlWebpackPlugin.files.favicon))/
+
+        if htmlWebpackPlugin.options.mobile
+            meta(name= 'viewport', content= 'width=device-width, initial-scale=1')/
+
+        //- TODO: Add options for Google Fonts.
+
+        each item in htmlWebpackPlugin.options.links
+            - if (typeof item === 'string' || item instanceof String) { item = { href: item }; }
+            link(rel= 'stylesheet')&attributes(item)/
+
+        each item in htmlWebpackPlugin.files.css
+            link(rel= 'stylesheet', type= 'text/css', href= item)/
+
+    body
+        if htmlWebpackPlugin.options.unsupportedBrowser
+            .unsupported-browser
+                style.
+                    .unsupported-browser {
+                        display : none;
+                    }
+                | Sorry, your browser is not supported.
+                | Please upgrade to the latest version or switch your browser to use this site.
+                | See #[a(href='http://outdatedbrowser.com/') outdatedbrowser.com] for options.
+
+        if htmlWebpackPlugin.options.appMountId
+            div(id= htmlWebpackPlugin.options.appMountId, class= 'mount_id_' + htmlWebpackPlugin.options.appMountId)
+
+        each index in htmlWebpackPlugin.options.appMountIds
+            div(id= htmlWebpackPlugin.options.appMountIds[index], class= 'mount_id_' + htmlWebpackPlugin.options.appMountIds[index])
+
+        if htmlWebpackPlugin.options.version
+            script(type= 'text/javascript', src= join(htmlWebpackPlugin.files.publicPath, htmlWebpackPlugin.options.version))
+
+        if htmlWebpackPlugin.options.window
+            script(type= 'text/javascript')
+                each key in Object.keys(htmlWebpackPlugin.options.window)
+                    | window['#{key}'] = !{JSON.stringify(htmlWebpackPlugin.options.window[key])};
+
+        if htmlWebpackPlugin.options.inlineManifestWebpackName
+            != htmlWebpackPlugin.files[htmlWebpackPlugin.options.inlineManifestWebpackName]
+
+        each key in Object.keys(htmlWebpackPlugin.files.chunks)
+            script(type= 'text/javascript', src= htmlWebpackPlugin.files.chunks[key].entry)
+
+        if htmlWebpackPlugin.options.scripts
+            each item in htmlWebpackPlugin.options.scripts
+                - if (typeof item === 'string' || item instanceof String) { item = { src: item }; }
+                script(type= 'text/javascript', async= '', defer= '')&attributes(item)
+
+        if htmlWebpackPlugin.options.googleAnalytics && htmlWebpackPlugin.options.googleAnalytics.trackingId
+            script
+                | (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                | (i[r].q=i[r].q || []).push(arguments)},i[r].l=1 * new Date();a=s.createElement(o),
+                | m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                | })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                | ga('create', '#{htmlWebpackPlugin.options.googleAnalytics.trackingId}', 'auto');
+
+                if htmlWebpackPlugin.options.googleAnalytics.pageViewOnLoad
+                    | ga('send', 'pageview');
+            script(type= 'text/javascript', async= '', defer= '', src= 'https://www.google-analytics.com/analytics.js')
+
+        //- TODO: Add an option for Yandex.Metrica

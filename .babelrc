@@ -1,0 +1,59 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "useBuiltIns": true,
+                "targets": {
+                    "browsers": [
+                        "chrome >= 59"
+                    ]
+                },
+                "modules": false
+            }
+        ],
+        "react",
+        "stage-0"
+    ],
+    "plugins": [
+        "flow-runtime",
+        "partial-application",
+        "ramda",
+        "react-require"
+    ],
+    "env": {
+        "development": {
+            "plugins": [
+                "styled-components"
+            ]
+        },
+        "production": {
+            "presets": [
+                [
+                    "env",
+                    {
+                        "useBuiltIns": true,
+                        "targets": {
+                            "browsers": [
+                                "last 2 versions"
+                            ],
+                            "uglify": true
+                        },
+                        "modules": false
+                    }
+                ],
+                "react-optimize"
+            ],
+            "plugins": [
+                [
+                    "groundskeeper-willie",
+                    {
+                        "removeConsole": true,
+                        "removeDebugger": true,
+                        "removePragma": false
+                    }
+                ]
+            ]
+        }
+    }
+}

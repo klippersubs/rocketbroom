@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Runs WDS
+
+export NODE_ENV='development'
+export PORT=1337
+export PUBLIC_PATH='/'
+export HOST='localhost'
+
+webpack

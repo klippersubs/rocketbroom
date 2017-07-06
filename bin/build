@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Runs webpack
+
+export NODE_ENV='production'
+export PORT=1337
+export PUBLIC_PATH='/'
+export HOST='klippersubs.github.io'
+
+webpack
+eslint --config ".eslintrc.production.js" "./build/**/*.js"

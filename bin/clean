@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+rm -rf build
+rm -rf coverage
+rm -rf cache
+rm -rf var
+mkdir -p build
+mkdir -p coverage
+mkdir -p cache
+mkdir -p var
